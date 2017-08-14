@@ -1,16 +1,16 @@
 class Factory {
   constructor() {
-    this.make = "Mazda";
-    this.location = "USA";
+    this.make = 'Mazda';
+    this.location = 'USA';
     this.airbags = true;
     this.abs = true;
-    this.warranty = "(60,000 miles / 3 years)";
+    this.warranty = '(60,000 miles / 3 years)';
     this.massBuild = function(quantity, options) {
       let message = `Building ${quantity} ${options.color} ${options.trim} ${options.model}`
       if (quantity > 1) message += 's'
     };
     this.customerBuild = function(color, options) {
-      console.log(`Building one ${color} ${options.trim} ${options.model} with the following options: ${options.options.join(", ")}`);
+      console.log(`Building one ${color} ${options.trim} ${options.model} with the following options: ${options.options.join(', ')}`);
     };
   }
 }
@@ -64,7 +64,7 @@ class Truck extends Factory{
     this.bed = bed;
     this.doors = doors;
     this.navigation = navigation;
-    this.warranty = "150,000 miles / 6 years";
+    this.warranty = '150,000 miles / 6 years';
   }
 }
 
@@ -87,7 +87,7 @@ const mazda3 = new Car({
 console.log(mazda3);
 
 // Print calling massBuild(), building 35000 cars.
-// It should print: "Building 35000 Red Touring Mazda3's."
+// It should print: 'Building 35000 Red Touring Mazda3's.'
 console.log(mazda3.massBuild(35000, {
   color: 'Red',
   trim: 'Touring',
@@ -96,10 +96,10 @@ console.log(mazda3.massBuild(35000, {
 
 
 // Print, calling customerBuild(), building one yellow mazda3 with the following options, as an array: weather package, satellite radio, rear spoiler.
-// It should read: "Building one yellow Touring Mazda3 with the following options: weather package, satellite radio, rear spoiler"
+// It should read: 'Building one yellow Touring Mazda3 with the following options: weather package, satellite radio, rear spoiler'
 console.log(mazda3.customerBuild(
-  "yellow", {
-    model: "Mazda3", 
+  'yellow', {
+    model: 'Mazda3', 
     trim: 'Touring', 
     options:['Weather Package', 'Satellite Radio', 'Rear Spoiler'],
   }
@@ -127,7 +127,7 @@ const miataRf = new Sport({
 console.log(miataRf);
 
 // Print miataRf, calling massBuild(), building 15,000
-// It should print: "Building 15000 Red Grand Touring Miata-RF's."
+// It should print: 'Building 15000 Red Grand Touring Miata-RF's.'
 console.log(miataRf.massBuild(15000, {
   color: 'Red',
   trim: 'Grand Touring',
@@ -135,12 +135,12 @@ console.log(miataRf.massBuild(15000, {
 }));
 
 // Print miataRf, calling customerBuild(), building one black Miata-Rf with the following options, as an array: hid headlights, sports suspension, leather steering wheel, heated seats, adaptive cruise control.
-// It should read: "Building one black Grand Touring Miata-RF with the following options: hid headlights, sports suspension, leather steering wheel, heated seats, adaptive cruise control"
+// It should read: 'Building one black Grand Touring Miata-RF with the following options: hid headlights, sports suspension, leather steering wheel, heated seats, adaptive cruise control'
 
-console.log(miataRf.customerBuild("Black", {
+console.log(miataRf.customerBuild('Black', {
   model: 'Miata-RF', 
   trim: 'Grand Touring', 
-  options: ["hID headlights", "sports suspension" ,"leather steering wheel", "heated seats", "adaptive cruise control"]
+  options: ['hID headlights', 'sports suspension' ,'leather steering wheel', "heated seats", "adaptive cruise control"]
 }));
 
 
